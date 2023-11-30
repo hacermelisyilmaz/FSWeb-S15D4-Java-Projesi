@@ -14,15 +14,15 @@ public class Main {
     public static boolean checkForPalindrome(String text) {
         String plainText = text.replaceAll("[.,?!'_-]", "").replaceAll(" ", "").toLowerCase(Locale.ENGLISH);
 
-        List<String> letters = new ArrayList<>(Arrays.asList(plainText.split("")));
+        //List<String> letters = new ArrayList<>(Arrays.asList(plainText.split("")));
+        Queue<String> letters = new LinkedList<>(Arrays.asList(plainText.split("")));
 
         Stack<String> lettersStack = new Stack<>();
         lettersStack.addAll(letters);
 
-        for (String letter: letters) {
+        for (String letter : letters) {
             if (!(letter.equals(lettersStack.pop()))) return false;
         }
-
         return true;
     }
 }
