@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -10,6 +12,7 @@ public class Main {
     }
 
     public static boolean checkForPalindrome(String text) {
-        return false;
+        String plainText = text.replaceAll("[.,?!'_-]", "").replaceAll(" ", "").toLowerCase(Locale.ENGLISH);
+
     }
 }
