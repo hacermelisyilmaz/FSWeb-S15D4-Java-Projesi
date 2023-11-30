@@ -14,5 +14,7 @@ public class Main {
     public static boolean checkForPalindrome(String text) {
         String plainText = text.replaceAll("[.,?!'_-]", "").replaceAll(" ", "").toLowerCase(Locale.ENGLISH);
 
+        List<String> letters = new ArrayList<>(Arrays.asList(plainText.split("")));
+
     }
 }
