@@ -37,8 +37,7 @@ public class Main {
         LinkedList<Integer> binary = new LinkedList<>();
 
         while (number > 0) {
-            int remainder = number % 2;
-            remainderStack.push(remainder);
+            remainderStack.push( number % 2);
             number /= 2;
         }
 
