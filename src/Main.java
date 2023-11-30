@@ -19,5 +19,10 @@ public class Main {
         Stack<String> lettersStack = new Stack<>();
         lettersStack.addAll(letters);
 
+        for (String letter: letters) {
+            if (!(letter.equals(lettersStack.pop()))) return false;
+        }
+
+        return true;
     }
 }
