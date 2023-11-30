@@ -22,29 +22,30 @@ public class Main {
 
         //List<String> letters = new ArrayList<>(Arrays.asList(plainText.split("")));
         Queue<String> letters = new LinkedList<>(Arrays.asList(plainText.split("")));
-
+        System.out.println(letters);
         Stack<String> lettersStack = new Stack<>();
         lettersStack.addAll(letters);
-
+        System.out.println(lettersStack);
         for (String letter : letters) {
             if (!(letter.equals(lettersStack.pop()))) return false;
         }
         return true;
     }
 
-    public static String convertDecimalToBinary(int number) {
-        Map<Integer, Integer> binaryMap = new HashMap<>();
+    public static LinkedList<Integer> convertDecimalToBinary(int number) {
+        Stack<Integer> remainderStack = new Stack<>();
+        LinkedList<Integer> binary = new LinkedList<>();
 
-        for (int i = 8; i >= 0; i--) {
-            binaryMap.put(i, 0);
-
-            if (number >= Math.pow(2, i)) {
-                number -= (int) Math.pow(2, i);
-                binaryMap.put(i, 1);
-            }
+        while (number > 0) {
+            int remainder = number % 2;
+            remainderStack.push(remainder);
+            number /= 2;
         }
 
-        System.out.println(binaryMap);
-        return "";
+        for (Integer integer : remainderStack) {
+            binary.push(integer);
+        }
+
+        return binary;
     }
 }
