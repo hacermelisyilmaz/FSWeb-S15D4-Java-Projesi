@@ -15,7 +15,9 @@ public class Main {
         String plainText = text.replaceAll("[.,?!'_-]", "").replaceAll(" ", "").toLowerCase(Locale.ENGLISH);
 
         List<String> letters = new ArrayList<>(Arrays.asList(plainText.split("")));
+
         Stack<String> lettersStack = new Stack<>();
+        lettersStack.addAll(letters);
 
     }
 }
